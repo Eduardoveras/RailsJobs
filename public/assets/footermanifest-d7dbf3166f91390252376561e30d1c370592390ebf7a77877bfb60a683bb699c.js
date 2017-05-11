@@ -13532,7 +13532,7 @@ var uiLoad = uiLoad || {};
 	'use strict';
 
 	  window.app = {
-      name: 'RocketMD',
+      name: 'railsJobs',
       version: '1.1.3',
       // for chart colors
       color: {
