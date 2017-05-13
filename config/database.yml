@@ -16,9 +16,10 @@ test:
   database: railsjobs_test
 
 production:
-  <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
-  database: railsjobs_production
+  url: <%= ENV["DATABASE_URL"] %>
+  encoding: unicode
+  pool: 99
+  timeout: 5000
 
 
 
