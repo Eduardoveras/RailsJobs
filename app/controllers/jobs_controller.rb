@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /jobs
   # GET /jobs.json
@@ -62,6 +63,7 @@ class JobsController < ApplicationController
   end
 
   private
+  
     # Use callbacks to share common setup or constraints between actions.
     def set_job
       @job = Job.find(params[:id])

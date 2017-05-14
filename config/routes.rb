@@ -1,21 +1,17 @@
 Rails.application.routes.draw do
   resources :jobs
   devise_for :users, controllers: { confirmations: 'confirmations' ,registrations: 'registrations'}
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-   #root 'plainpage#index'
 
 
   devise_scope :user do
+    root 'plainpage#index', as: :root
     authenticated :user do
       mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-      root 'plainpage#index', as: :root
-    end
 
+    end
     unauthenticated do
-      root 'devise/sessions#new', as: :unauthenticated_root
+      # Routes for not-authenticated users
+
     end
   end
 

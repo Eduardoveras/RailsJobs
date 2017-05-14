@@ -4,10 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-
-
   has_paper_trail
-  #TODO: Implement "accepts_nested_attributes_for:" method, and update registration form
+  has_many :jobs
 
 
 end
